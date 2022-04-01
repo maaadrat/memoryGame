@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		.box1 {
+			height: 300px;
+			width: 400px;
+			background: red;
+			background-image: url(1.jfif);
+			background-size: 100% 100%;
+			transition: 1s;
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		.box2 {
+			height: 300px;
+			width: 400px;
+			margin-left: 450px;
+			background: blue;
+			background-image: url(2.jfif);
+			background-size: 100% 100%;
+			transition: 1s;
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		.box3 {
+			height: 300px;
+			width: 400px;
+			margin-left: 900px;
+			background: green;
+			background-image: url(3.jpg);
+			background-size: 100% 100%;
+			transition: 1s;
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		.box4 {
+			height: 300px;
+			width: 400px;
+			margin-top: 350px;
+			background: yellow;
+			background-image: url(4.jfif);
+			background-size: 100% 100%;
+			transition: 1s;
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		.box5 {
+			height: 300px;
+			width: 400px;
+			margin-left: 450px;
+			margin-top: 350px;
+			background: purple;
+			background-image: url(5.jfif);
+			background-size: 100% 100%;
+			transition: 1s;
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		.box6 {
+			height: 300px;
+			width: 400px;
+			margin-left: 900px;
+			margin-top: 350px;
+			background: brown;
+			background-image: url(6.jfif);
+			background-size: 100% 100%;
+			transition: 1s;
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.main {
+			width: 1300px;
+			padding-top: 100px;
+		}
+		.btn {
+			width: 160px;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+<div class="main1">
+	<h1 class="center" style="width: 400px;text-align: center;margin-top: 60px;">Осталось попыток: <span class="span">3</span></h1>
+	<div class="center" style="width:160px"><button class="btn">Скрыть элементы</button></div>
+	<h1 class="center que" style="display: none; width: 200px;height: 20px;text-align: center;">Где медведь?</h1>
+</div>
+<div class="main center">
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+	<div class="box6"></div>
+</div>
+<script type="text/javascript">
+	let attempt = 3
+	let boxID = 0
+	let ml = 0
+	document.querySelector('.btn').onclick = function () {
+		document.querySelector('.box1').style.background = "black";
+		document.querySelector('.box2').style.background = "black";
+		document.querySelector('.box3').style.background = "black";
+		document.querySelector('.box4').style.background = "black";
+		document.querySelector('.box5').style.background = "black";
+		document.querySelector('.box6').style.background = "black";
+		//boxID = Math.floor(Math.random() * 6) + 1
+		//var ml = document.getElementsByClassName('box2')
+		//alert(ml)
+		document.querySelector('.box2').style.marginTop = "350px"
+		document.querySelector('.box2').style.marginLeft = "0px"
+		document.querySelector('.box4').style.marginLeft = "450px"
+		document.querySelector('.box4').style.marginTop = "0px"
+		document.querySelector('.box1').style.marginLeft = "900px"
+		document.querySelector('.box1').style.marginTop = "350px"
+		document.querySelector('.box6').style.marginLeft = "0px"
+		document.querySelector('.box6').style.marginTop = "0px"
+		document.querySelector('.box3').style.marginLeft = "450px"
+		document.querySelector('.box3').style.marginTop = "350px"
+		document.querySelector('.box5').style.marginLeft = "900px"
+		document.querySelector('.box5').style.marginTop = "0px"
+		document.querySelector('.que').style.display = "block"
+
+	}
+ 	document.querySelector('.box1').onclick = function () {
+		attempt = attempt - 1
+		document.querySelector('.span').innerHTML = attempt;
+		document.querySelector('.box1').style.backgroundImage = "url(1.jfif)";
+		document.querySelector('.box1').style.backgroundSize = "100% 100%";
+		if(attempt==0){
+			 alert("Попыток больше нет")
+			 document.querySelector('.main').style.display = 'none'
+		}
+	}
+	document.querySelector('.box2').onclick = function () {
+		attempt = attempt - 1
+		document.querySelector('.span').innerHTML = attempt;
+		document.querySelector('.box2').style.backgroundImage = "url(2.jfif)";
+		document.querySelector('.box2').style.backgroundSize = "100% 100%";
+		if(attempt==0){
+			 alert("Попыток больше нет")
+			 document.querySelector('.main').style.display = 'none'
+		}
+	}
+	document.querySelector('.box3').onclick = function () {
+		attempt = attempt - 1
+		document.querySelector('.span').innerHTML = attempt;
+		document.querySelector('.box3').style.backgroundImage = "url(3.jpg)";
+		document.querySelector('.box3').style.backgroundSize = "100% 100%";
+		if(attempt==0){
+			 alert("Попыток больше нет")
+			 document.querySelector('.main').style.display = 'none'
+		}
+	}
+	document.querySelector('.box4').onclick = function () {
+		attempt = attempt - 1
+		document.querySelector('.span').innerHTML = attempt;
+		document.querySelector('.box4').style.backgroundImage = "url(4.jfif)";
+		document.querySelector('.box4').style.backgroundSize = "100% 100%";
+		if(attempt==0){
+			 alert("Попыток больше нет")
+			 document.querySelector('.main').style.display = 'none'
+		}
+	}
+	document.querySelector('.box5').onclick = function () {
+		document.querySelector('.box5').style.backgroundImage = "url(5.jfif)";
+		document.querySelector('.box5').style.backgroundSize = "100% 100%";
+		document.querySelector('.main').style.display = "none";
+		alert('Ты выйграл!')
+	}
+	document.querySelector('.box6').onclick = function () {
+		attempt = attempt - 1
+		document.querySelector('.span').innerHTML = attempt;
+		document.querySelector('.box6').style.backgroundImage = "url(6.jfif)";
+		document.querySelector('.box6').style.backgroundSize = "100% 100%";
+		if(attempt==0){
+			 alert("Попыток больше нет")
+			 document.querySelector('.main').style.display = 'none'
+		}
+	}
+</script>
+</body>
+</html>
